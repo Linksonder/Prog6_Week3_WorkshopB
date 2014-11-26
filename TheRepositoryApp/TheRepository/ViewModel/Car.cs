@@ -14,5 +14,7 @@ namespace TheRepository.ViewModel
         public double Prijs { get; set; }
 
         public double Bijtelling { get; set; }
+
+        public bool Actief { get; set; }
     }
 }

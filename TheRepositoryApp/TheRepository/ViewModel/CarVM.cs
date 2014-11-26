@@ -62,9 +62,17 @@ namespace TheRepository.ViewModel
             get {
                 return this.LeaseKostenPerMaand * 12;
             }
-
         }
 
+        public bool Actief
+        {
+            get { return _car.Actief; }
+            set
+            {
+                _car.Actief = value;
+                RaisePropertyChanged();
+            }
+        }
 
         public CarVM()
         {
