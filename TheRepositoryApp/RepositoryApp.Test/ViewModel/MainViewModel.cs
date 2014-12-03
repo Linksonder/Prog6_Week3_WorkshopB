@@ -1,8 +1,6 @@
 using GalaSoft.MvvmLight;
-using System.Collections.ObjectModel;
-using System.Linq;
 
-namespace TheRepository.ViewModel
+namespace RepositoryApp.Test.ViewModel
 {
     /// <summary>
     /// This class contains properties that the main View can data bind to.
@@ -18,23 +16,19 @@ namespace TheRepository.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        private ICarRepository _carRepository;
-
-        public ObservableCollection<CarVM> MyCars { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
-        public MainViewModel(ICarRepository carRepository)
+        public MainViewModel()
         {
-            this._carRepository = carRepository;
-            var cars = carRepository.GetAllCars().Where(c => !c.Actief).ToList();
-            this.MyCars = new ObservableCollection<CarVM>(cars.Select(c => new CarVM(c)));
-        }
-
-        public void SetRepository(ICarRepository carRepository)
-        {
-            this._carRepository = carRepository;
+            ////if (IsInDesignMode)
+            ////{
+            ////    // Code runs in Blend --> create design time data.
+            ////}
+            ////else
+            ////{
+            ////    // Code runs "for real"
+            ////}
         }
     }
 }

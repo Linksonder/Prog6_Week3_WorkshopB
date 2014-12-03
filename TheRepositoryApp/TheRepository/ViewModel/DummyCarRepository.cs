@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TheRepository.ViewModel
 {
-    class DummyCarRepository : ICarRepository
+    public class DummyCarRepository : ICarRepository
     {
         public IEnumerable<Car> GetAllCars()
         {
