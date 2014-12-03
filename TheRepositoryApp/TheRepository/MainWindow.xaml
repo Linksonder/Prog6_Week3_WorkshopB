@@ -4,8 +4,17 @@
         Title="MainWindow" Height="350" Width="525"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
 
-        <DataGrid AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding MyCars}" Margin="5">
+        <WrapPanel Grid.Row="0">
+            <Label>Totale prijs:</Label>
+            <Label Content="{Binding TotalePrijs}"></Label>
+        </WrapPanel>
+
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding MyCars}" Margin="5">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Merk" Binding="{Binding Merk}" />
                 <DataGridTextColumn Header="Model" Binding="{Binding Model}"  />
@@ -13,6 +22,8 @@
                 <DataGridTextColumn Header="Jaarlijkse kosten" Binding="{Binding LeaseKostenPerJaar}" />
             </DataGrid.Columns>
         </DataGrid>
+        
+
 
     </Grid>
 </Window>

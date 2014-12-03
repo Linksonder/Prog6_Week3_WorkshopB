@@ -22,6 +22,13 @@ namespace TheRepository.ViewModel
 
         public ObservableCollection<CarVM> MyCars { get; set; }
 
+        public double TotalePrijs { 
+            get
+            {
+                return MyCars.Sum(c => c.Prijs);
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
